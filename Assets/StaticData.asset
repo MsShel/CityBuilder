@@ -17,6 +17,6 @@ MonoBehaviour:
   smoothTime: 0
   followOffset: {x: 0, y: 0, z: 0}
   _gridOffset: {x: 0, y: 0}
-  _housePrefab: {fileID: 2696532609258814485, guid: 2a4adbc348c4dda4997801ef5931cc9d, type: 3}
+  _housePrefab: {fileID: 2696532609258814485, guid: 8b7e763ebb0273e42b0cf7a6474e5aef, type: 3}
   _simpleRoadPrefab: {fileID: 318590319223462477, guid: ff3388a4bc5ddc747b7f452c2b3785e6, type: 3}
   GridSize: {x: 100, y: 100}
