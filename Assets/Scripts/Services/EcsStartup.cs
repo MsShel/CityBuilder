@@ -28,8 +28,8 @@ public class EcsStartup : MonoBehaviour
 #endif
         _updateSystems
             .Add(new BuildingPlacementSystem())
-        // .Add(new EnemyInitSystem())
-        // .OneFrame<TryReload>()
+         .Add(new GridInitSystem())
+        
         // .Add(new GridInitSystem())
         // .Add(new PauseSystem())
         // .Add(new PlayerRotationSystem())
@@ -42,16 +42,18 @@ public class EcsStartup : MonoBehaviour
         // .Add(new ProjectileMoveSystem())
         // .Add(new ProjectileHitSystem())
         // .Add(new ReloadingSystem())
-        .Inject(configuration);
-        // .Inject(sceneData)
+        .Inject(configuration)
+        .Inject(sceneData);
         // .Inject(ui)
         // .Inject(runtimeData);
 
         _fixedUpdateSystems
+            .Add(new RotatePlacingObject())
+            .Add(new CameraControllerSystem())
             // .Add(new PlayerMoveSystem())
-            .Inject(configuration);
+            .Inject(configuration)
         // .Add(new CameraFollowSystem())
-        // .Inject(sceneData)
+         .Inject(sceneData);
         // .Inject(runtimeData);
 
          _updateSystems.Init();
