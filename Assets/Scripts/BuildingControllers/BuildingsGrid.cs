@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+﻿using BuildingControllers;
+using UnityEngine;
 
 
 public class BuildingsGrid : MonoBehaviour
 {
     public Vector2Int GridSize = new Vector2Int(100, 100);
 
-    private BuildingMonoBech[,] grid;
-    private BuildingMonoBech flyingBuilding;
+    private BuildingMonoBeh[,] grid;
+    private BuildingMonoBeh flyingBuilding;
     private Camera mainCamera;
 
     private void Start()
     {
-        grid = new BuildingMonoBech[GridSize.x, GridSize.y];
+        grid = new BuildingMonoBeh[GridSize.x, GridSize.y];
 
         mainCamera = Camera.main;
     }
@@ -37,11 +38,9 @@ public class BuildingsGrid : MonoBehaviour
                               || x > GridSize.x - flyingBuilding.Size.x)) && !(y < 0
                                                                              || y > GridSize.y - flyingBuilding.Size.y);
 
-            //if  available = false;
-
             if (available && IsPlaceTaken(x, y))
             {
-                available = false;
+                //available = false;
             }
 
             flyingBuilding.transform.position = new Vector3(x, 0, y);
@@ -54,7 +53,7 @@ public class BuildingsGrid : MonoBehaviour
         }
     }
 
-    public void StartPlacingBuilding(BuildingMonoBech buildingPrefab)
+    public void StartPlacingBuilding(BuildingMonoBeh buildingPrefab)
     {
         if (flyingBuilding != null)
         {
